@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matheus Fabio — AI Engineer & Conversational AI Developer. Building intelligent systems with LLMs, AI agents, and enterprise integrations.">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta property="og:title" content="Matheus Fabio — AI Engineer & Conversational AI Developer">
+    <meta property="og:description" content="Building intelligent systems with LLMs, AI agents, and enterprise integrations.">
+    <meta property="og:type" content="website">
+    <title>Matheus Fabio — AI Engineer & Conversational AI Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='66' font-family='Inter, sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- ============== NAVBAR ============== -->
+    <header class="navbar" id="navbar" role="banner">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Matheus Fabio home">
+                <span class="logo-mark" aria-hidden="true">M</span>
+                <span class="logo-text">Matheus<span class="logo-dot" aria-hidden="true">.</span></span>
+            </a>
+
+            <nav class="nav-links" id="navLinks" aria-label="Primary">
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ============== 1. HERO ============== -->
+        <section class="hero" id="hero" aria-labelledby="heroHeading">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="grid-pattern"></div>
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+                <div class="particles" id="particles"></div>
+            </div>
+
+            <div class="container hero-inner">
+                <div class="hero-eyebrow reveal" data-reveal-delay="0">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>Open to opportunities</span>
+                </div>
+
+                <h1 class="hero-title reveal" id="heroHeading" data-reveal-delay="100">
+                    <span class="hero-line">Matheus</span>
+                    <span class="hero-line gradient-text">Fabio</span>
+                </h1>
+
+                <p class="hero-subtitle reveal" data-reveal-delay="200">
+                    AI Engineer <span class="text-muted">&amp;</span> Conversational AI Developer
+                </p>
+
+                <p class="hero-tagline reveal" data-reveal-delay="300">
+                    Building intelligent systems with LLMs, AI agents, and enterprise integrations.
+                </p>
+
+                <div class="hero-cta reveal" data-reveal-delay="400">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects
+                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+
+                <div class="hero-scroll reveal" data-reveal-delay="500" aria-hidden="true">
+                    <span class="hero-scroll-line"></span>
+                    <span>Scroll</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== 2. STATS BAR ============== -->
+        <section class="stats" aria-label="Key metrics">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat reveal" data-counter>
+                        <div class="stat-value gradient-text" data-target="5" data-suffix="+">0</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat reveal" data-counter>
+                        <div class="stat-value gradient-text">Multi-Agent</div>
+                        <div class="stat-label">Built watsonx orchestrations</div>
+                    </div>
+                    <div class="stat reveal" data-counter>
+                        <div class="stat-value gradient-text">Global Scale</div>
+                        <div class="stat-label">English &amp; Arabic markets</div>
+                    </div>
+                    <div class="stat reveal" data-counter>
+                        <div class="stat-value gradient-text">Enterprise</div>
+                        <div class="stat-label">AWS · GCP · IBM · OpenShift</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== 3. ABOUT ============== -->
+        <section class="about section" id="about" aria-labelledby="aboutHeading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">/ About</span>
+                    <h2 class="section-title" id="aboutHeading">Crafting AI that actually ships.</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-bio reveal">
+                        <p>
+                            I am an <strong class="gradient-text">AI Engineer</strong> and <strong>Conversational AI Developer</strong> with extensive experience building intelligent systems using Large Language Models, AI agents, and complex enterprise integrations.
+                        </p>
+                        <p>
+                            My expertise lies in designing and implementing conversational assistants and automation workflows that bridge the gap between business needs and scalable technology — turning cutting-edge research into production-grade systems.
+                        </p>
+                    </div>
+
+                    <div class="about-skills reveal">
+                        <h3 class="about-skills-title">Core Stack</h3>
+                        <ul class="tag-list" aria-label="Skills">
+                            <li class="tag">AI</li>
+                            <li class="tag">LLM</li>
+                            <li class="tag">RAG</li>
+                            <li class="tag">Python</li>
+                            <li class="tag">IBM Watsonx</li>
+                            <li class="tag">Conversational AI</li>
+                            <li class="tag">Node.js</li>
+                            <li class="tag">NestJS</li>
+                            <li class="tag">TypeScript</li>
+                            <li class="tag">React</li>
+                            <li class="tag">AWS</li>
+                            <li class="tag">GCP</li>
+                            <li class="tag">OpenShift</li>
+                            <li class="tag">Kubernetes</li>
+                            <li class="tag">N8N</li>
+                            <li class="tag">Automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== 4. PROJECTS ============== -->
+        <section class="projects section" id="projects" aria-labelledby="projectsHeading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">/ Featured Work</span>
+                    <h2 class="section-title" id="projectsHeading">Selected projects.</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-head">
+                            <div class="project-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            </div>
+                            <span class="project-tag">AI · Multi-Agent</span>
+                        </div>
+                        <h3 class="project-title">multiagent-rag</h3>
+                        <p class="project-desc">
+                            Sistema multi-agent com RAG para busca e geração de respostas contextualizadas. Implementa orchestration de agentes especializados com retrieval augmentado.
+                        </p>
+                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                            <li class="tag">Python</li>
+                            <li class="tag">RAG</li>
+                            <li class="tag">Multi-Agent</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/FabioAnteloMath/multiagent-rag" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-head">
+                            <div class="project-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="9" y1="10" x2="15" y2="10"></line><line x1="12" y1="7" x2="12" y2="13"></line></svg>
+                            </div>
+                            <span class="project-tag">Automation · Bot</span>
+                        </div>
+                        <h3 class="project-title">discord-task-bot</h3>
+                        <p class="project-desc">
+                            Bot de tarefas para Discord com automação de workflows. Gerencia tarefas, notificações e integração com canais de comunicação.
+                        </p>
+                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                            <li class="tag">Python</li>
+                            <li class="tag">Discord API</li>
+                            <li class="tag">Automation</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/FabioAnteloMath/discord-task-bot" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-head">
+                            <div class="project-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                            <span class="project-tag">Full-Stack · Pets</span>
+                        </div>
+                        <h3 class="project-title">GetaPets</h3>
+                        <p class="project-desc">
+                            Plataforma para adoção e gerenciamento de pets. Sistema completo com cadastro, busca e conexão entre adotantes e ONGs.
+                        </p>
+                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                            <li class="tag">JavaScript</li>
+                            <li class="tag">Full-Stack</li>
+                            <li class="tag">API</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/FabioAnteloMath/GetaPets" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-head">
+                            <div class="project-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="13" y2="17"></line></svg>
+                            </div>
+                            <span class="project-tag">Frontend · Task</span>
+                        </div>
+                        <h3 class="project-title">Todo-List</h3>
+                        <p class="project-desc">
+                            Aplicação web de lista de tarefas com interface intuitiva. Gerenciamento de tarefas com funcionalidades de criar, editar e completar.
+                        </p>
+                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                            <li class="tag">HTML</li>
+                            <li class="tag">JavaScript</li>
+                            <li class="tag">CSS</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/FabioAnteloMath/Todo-List" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== 5. SKILLS ============== -->
+        <section class="skills section" id="skills" aria-labelledby="skillsHeading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">/ Stack</span>
+                    <h2 class="section-title" id="skillsHeading">Skills &amp; toolbox.</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6a6 6 0 1 0 6 6"></path><circle cx="12" cy="12" r="2"></circle></svg>
+                            </div>
+                            <h3 class="skill-card-title">AI &amp; Automation</h3>
+                        </div>
+                        <ul class="tag-list" aria-label="AI skills">
+                            <li class="tag">IBM Watsonx</li>
+                            <li class="tag">N8N</li>
+                            <li class="tag">Autonomous Agents</li>
+                            <li class="tag">RAG Pipelines</li>
+                            <li class="tag">GenAI</li>
+                            <li class="tag">LLM Integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <h3 class="skill-card-title">Full-Stack Development</h3>
+                        </div>
+                        <ul class="tag-list" aria-label="Full-stack skills">
+                            <li class="tag">Node.js</li>
+                            <li class="tag">NestJS</li>
+                            <li class="tag">Python</li>
+                            <li class="tag">TypeScript</li>
+                            <li class="tag">React</li>
+                            <li class="tag">Microservices</li>
+                            <li class="tag">REST APIs</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                            </div>
+                            <h3 class="skill-card-title">Cloud &amp; Infrastructure</h3>
+                        </div>
+                        <ul class="tag-list" aria-label="Cloud skills">
+                            <li class="tag">AWS</li>
+                            <li class="tag">GCP</li>
+                            <li class="tag">IBM Cloud</li>
+                            <li class="tag">OpenShift</li>
+                            <li class="tag">Kubernetes</li>
+                            <li class="tag">Multi-cloud</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== 6. EXPERIENCE ============== -->
+        <section class="experience section" id="experience" aria-labelledby="experienceHeading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">/ Highlights</span>
+                    <h2 class="section-title" id="experienceHeading">What I've shipped.</h2>
+                </div>
+
+                <ol class="timeline">
+                    <li class="timeline-item reveal">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">AI Orchestration</span>
+                            </div>
+                            <h3 class="timeline-title">Enterprise AI Orchestration</h3>
+                            <p class="timeline-desc">
+                                Architected multi-agent systems on IBM watsonx and event-driven automation pipelines (n8n), hyper-scaling operational efficiency across business units.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item reveal">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">Conversational AI</span>
+                            </div>
+                            <h3 class="timeline-title">Global Conversational Systems</h3>
+                            <p class="timeline-desc">
+                                Designed multilingual NLU architectures (English &amp; Arabic) and advanced GenAI/RAG pipelines, enhancing intent recognition and dialogue fluidity.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item reveal">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">Full-Stack</span>
+                            </div>
+                            <h3 class="timeline-title">Full-Stack &amp; Real-Time Integration</h3>
+                            <p class="timeline-desc">
+                                Engineered robust backend services and embeddable React widgets with real-time streaming and CRM integrations (Salesforce).
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item reveal">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">Infrastructure</span>
+                            </div>
+                            <h3 class="timeline-title">Scalable Multi-Cloud Infrastructure</h3>
+                            <p class="timeline-desc">
+                                Deployed high-availability multi-cloud architectures (AWS, GCP, IBM Cloud, OpenShift/Kubernetes) for intensive AI workloads.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============== 7. CONTACT ============== -->
+        <section class="contact section" id="contact" aria-labelledby="contactHeading">
+            <div class="contact-bg" aria-hidden="true">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+            </div>
+
+            <div class="container contact-inner">
+                <div class="reveal">
+                    <span class="section-eyebrow">/ Contact</span>
+                    <h2 class="section-title contact-title" id="contactHeading">
+                        Let's build something <span class="gradient-text">together</span>.
+                    </h2>
+                    <p class="contact-subtitle">
+                        Whether it's a complex AI workflow, a production-grade LLM integration, or a conversational system — I'm always up for a good challenge.
+                    </p>
+                </div>
+
+                <div class="contact-actions reveal">
+                    <a href="mailto:matheusfabio13@hotmail.com" class="btn btn-primary btn-lg">
+                        Get in Touch
+                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <ul class="socials reveal" aria-label="Social links">
+                    <li>
+                        <a href="https://github.com/FabioAnteloMath" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/matheusfabio/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:matheusfabio13@hotmail.com" class="social-link" aria-label="Send email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span>Email</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Matheus Fabio — Built with care.</p>
+            <p class="footer-tech">Vanilla HTML · CSS · JS</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
