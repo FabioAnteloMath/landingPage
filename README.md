@@ -9,56 +9,39 @@ Built with vanilla HTML, CSS, and JavaScript. **No frameworks, no build step, no
 ## File structure
 
 ```
-ladingpage/
+landing-page/
 ├── index.html      # Semantic structure, all 7 sections
+├── 404.html        # Custom not-found page (GH Pages picks it up automatically)
 ├── styles.css      # Design system + responsive layout
 ├── script.js       # Interactivity (nav, scroll, counter, particles)
+├── .nojekyll       # Tells GitHub Pages to skip Jekyll — pure static deploy
+├── .gitignore      # OS / editor noise
 └── README.md       # This file
 ```
 
 ---
 
-## Deploy para GitHub Pages
+## Deploy to GitHub Pages
 
-### Passo 1 — Criar repositório no GitHub
+This repo is already wired for static GitHub Pages — no build step, no theme, no `_config.yml`. The `.nojekyll` file guarantees it stays that way.
 
-1. Acesse [github.com/new](https://github.com/new)
-2. Nome do repositório: `matheusfabio.github.io` (ou outro de sua preferência)
-3. Selecione **Public**
-4. Clique **Create repository**
+1. Go to the repo on GitHub → **Settings** → **Pages**
+2. **Source:** `Deploy from a branch`
+3. **Branch:** `main` / `(root)`
+4. Click **Save**
 
-### Passo 2 — Push dos arquivos
-
-```bash
-# No terminal, dentro da pasta do projeto:
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/FabioAnteloMath/matheusfabio.github.io.git
-git push -u origin main
-```
-
-### Passo 3 — Habilitar GitHub Pages
-
-1. Vá ao repositório no GitHub
-2. **Settings** → **Pages** (no menu lateral)
-3. Em **Source**, selecione:
-   - **Branch:** `main`
-   - **Folder:** `/ (root)`
-4. Clique **Save**
-5. Aguarde 1-2 minutos até o deploy finalizar
-6. O site estará disponível em: `https://FabioAnteloMath.github.io/matheusfabio.github.io/`
+In about a minute the site will be live at:
+**`https://fabioantlomath.github.io/landingPage/`**
 
 ---
 
-## Quick start (desenvolvimento local)
+## Quick start (local dev)
 
-### Opção 1 — Abrir diretamente
-Double-click `index.html` ou abra em qualquer navegador moderno.
+### Option 1 — Open directly
+Double-click `index.html` or open it in any modern browser. Done.
 
-### Opção 2 — Servidor local (recomendado)
-Qualquer servidor estático funciona. Na raiz do projeto:
+### Option 2 — Local server (recommended for font/dev tools)
+Any static server works. From the project root:
 
 ```bash
 # Python 3
@@ -71,15 +54,17 @@ npx serve .
 php -S localhost:8080
 ```
 
-Acesse: <http://localhost:8080>
+Then open <http://localhost:8080>.
 
 ---
 
-## Deploy em outras plataformas
+## Deploy to other platforms
 
-- **Vercel** — `vercel deploy` (sem config)
-- **Netlify** — arraste a pasta para o dashboard
-- **Cloudflare Pages** — conecte o repo, build command vazio, output dir `/`
+No config needed — drop the folder or connect the repo:
+
+- **Vercel** — `vercel deploy`
+- **Netlify** — drag-and-drop the folder onto the dashboard
+- **Cloudflare Pages** — connect the repo, build command empty, output dir `/`
 
 ---
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>404 — Page not found · Matheus Fabio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .notfound {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-3xl) var(--container-padding);
+        }
+        .notfound-inner { max-width: 520px; }
+        .notfound-code {
+            font-family: var(--font-mono);
+            font-size: clamp(5rem, 14vw, 9rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-md);
+        }
+        .notfound-title { font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-sm); }
+        .notfound-desc { color: var(--text-secondary); margin-bottom: var(--space-xl); }
+    </style>
+</head>
+<body>
+    <main class="notfound">
+        <div class="notfound-inner">
+            <div class="notfound-code" aria-hidden="true">404</div>
+            <h1 class="notfound-title">Page not found</h1>
+            <p class="notfound-desc">The page you're looking for doesn't exist or was moved. Let's get you back on track.</p>
+            <a href="./" class="btn btn-primary">
+                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:scaleX(-1)"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                Back to home
+            </a>
+        </div>
+    </main>
+</body>
+</html>
