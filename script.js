@@ -209,52 +209,224 @@
     }
 
     /* ----------------------------------------------------------------
-       6. Floating particles (hero background)
+       6. Constellation effect (AI/Neural network inspired)
     ---------------------------------------------------------------- */
-    const particlesContainer = $('#particles');
+    const constellationContainer = $('#constellation');
+    const canvas = $('#constellationCanvas');
+    const ctx = canvas ? canvas.getContext('2d') : null;
 
-    function createParticles() {
-        if (!particlesContainer || prefersReducedMotion) return;
+    // Global page constellation
+    const pageCanvas = $('#pageConstellationCanvas');
+    const pageCtx = pageCanvas ? pageCanvas.getContext('2d') : null;
 
-        // Detect mobile to reduce particle count
-        const isMobile = window.innerWidth < 768;
-        const count = isMobile ? 18 : 36;
+    let stars = [];
+    let pageStars = [];
+    let mouse = { x: null, y: null, radius: 150 };
+    let pageMouse = { x: null, y: null, radius: 150 };
+    let animationId = null;
+    let pageAnimationId = null;
 
-        // Clear any existing
-        particlesContainer.innerHTML = '';
+    const STAR_COUNT = 80;
+    const CONNECTION_DISTANCE = 120;
+    const MOUSE_INFLUENCE_RADIUS = 200;
 
-        const fragment = document.createDocumentFragment();
-        for (let i = 0; i < count; i++) {
-            const p = document.createElement('span');
-            p.className = 'particle';
-            const size = 2 + Math.random() * 3; // 2–5px
-            const left = Math.random() * 100;   // 0–100%
-            const duration = 12 + Math.random() * 18; // 12–30s
-            const delay = -Math.random() * duration;   // negative so they start mid-cycle
-            const drift = (Math.random() - 0.5) * 80; // -40 to 40 px
-            const hue = Math.random() > 0.5 ? '99, 102, 241' : '168, 85, 247';
-
-            p.style.width = `${size}px`;
-            p.style.height = `${size}px`;
-            p.style.left = `${left}%`;
-            p.style.bottom = `-10px`;
-            p.style.animationDuration = `${duration}s`;
-            p.style.animationDelay = `${delay}s`;
-            p.style.setProperty('--drift', `${drift}px`);
-            p.style.background = `rgb(${hue})`;
-            p.style.boxShadow = `0 0 ${size * 2}px rgba(${hue}, 0.6)`;
-            fragment.appendChild(p);
-        }
-        particlesContainer.appendChild(fragment);
+    function resizeCanvas() {
+        if (!canvas || !constellationContainer) return;
+        canvas.width = constellationContainer.offsetWidth;
+        canvas.height = constellationContainer.offsetHeight;
     }
 
-    createParticles();
+    function resizePageCanvas() {
+        if (!pageCanvas) return;
+        pageCanvas.width = window.innerWidth;
+        pageCanvas.height = window.innerHeight;
+    }
 
-    // Recreate on resize (debounced)
+    class Star {
+        constructor(targetCtx, targetCanvas, mouseObj) {
+            this.ctx = targetCtx;
+            this.canvas = targetCanvas;
+            this.mouse = mouseObj;
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * this.canvas.width;
+            this.y = Math.random() * this.canvas.height;
+            this.size = Math.random() * 2 + 1;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.speedY = (Math.random() - 0.5) * 0.3;
+            this.opacity = Math.random() * 0.5 + 0.3;
+            this.hue = Math.random() > 0.5 ? 250 : 270; // purple-blue
+        }
+
+        update() {
+            // Mouse influence - repel/attract
+            if (this.mouse.x !== null && this.mouse.y !== null) {
+                const dx = this.x - this.mouse.x;
+                const dy = this.y - this.mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < MOUSE_INFLUENCE_RADIUS) {
+                    const force = (MOUSE_INFLUENCE_RADIUS - dist) / MOUSE_INFLUENCE_RADIUS;
+                    const angle = Math.atan2(dy, dx);
+                    this.x += Math.cos(angle) * force * 0.8;
+                    this.y += Math.sin(angle) * force * 0.8;
+                }
+            }
+
+            // Gentle drift
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            // Wrap around edges
+            if (this.x < 0) this.x = this.canvas.width;
+            if (this.x > this.canvas.width) this.x = 0;
+            if (this.y < 0) this.y = this.canvas.height;
+            if (this.y > this.canvas.height) this.y = 0;
+        }
+
+        draw() {
+            this.ctx.beginPath();
+            this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = `hsla(${this.hue}, 70%, 65%, ${this.opacity})`;
+            this.ctx.fill();
+
+            // Glow
+            this.ctx.shadowBlur = 10;
+            this.ctx.shadowColor = `hsla(${this.hue}, 70%, 65%, 0.5)`;
+        }
+    }
+
+    function drawConnections(targetStars, targetCtx) {
+        for (let i = 0; i < targetStars.length; i++) {
+            for (let j = i + 1; j < targetStars.length; j++) {
+                const dx = targetStars[i].x - targetStars[j].x;
+                const dy = targetStars[i].y - targetStars[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < CONNECTION_DISTANCE) {
+                    const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.4;
+                    targetCtx.beginPath();
+                    targetCtx.moveTo(targetStars[i].x, targetStars[i].y);
+                    targetCtx.lineTo(targetStars[j].x, targetStars[j].y);
+
+                    // Gradient line for depth
+                    const gradient = targetCtx.createLinearGradient(
+                        targetStars[i].x, targetStars[i].y, targetStars[j].x, targetStars[j].y
+                    );
+                    gradient.addColorStop(0, `hsla(250, 70%, 65%, ${opacity})`);
+                    gradient.addColorStop(1, `hsla(270, 70%, 65%, ${opacity * 0.5})`);
+
+                    targetCtx.strokeStyle = gradient;
+                    targetCtx.lineWidth = 1;
+                    targetCtx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        if (!ctx) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Update and draw stars
+        stars.forEach(star => {
+            star.update();
+            star.draw();
+        });
+
+        // Draw connections
+        drawConnections(stars, ctx);
+
+        animationId = requestAnimationFrame(animate);
+    }
+
+    function animatePageStars() {
+        if (!pageCtx) return;
+
+        pageCtx.clearRect(0, 0, pageCanvas.width, pageCanvas.height);
+
+        // Update and draw stars
+        pageStars.forEach(star => {
+            star.update();
+            star.draw();
+        });
+
+        // Draw connections
+        drawConnections(pageStars, pageCtx);
+
+        pageAnimationId = requestAnimationFrame(animatePageStars);
+    }
+
+    function initConstellation() {
+        if (!canvas || !constellationContainer || prefersReducedMotion) return;
+
+        resizeCanvas();
+        stars = [];
+
+        for (let i = 0; i < STAR_COUNT; i++) {
+            stars.push(new Star(ctx, canvas, mouse));
+        }
+
+        // Mouse tracking for hero canvas
+        window.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Start animation
+        if (animationId) cancelAnimationFrame(animationId);
+        animate();
+    }
+
+    function initPageConstellation() {
+        if (!pageCanvas || !pageCtx || prefersReducedMotion) return;
+
+        resizePageCanvas();
+        pageStars = [];
+
+        for (let i = 0; i < STAR_COUNT; i++) {
+            pageStars.push(new Star(pageCtx, pageCanvas, pageMouse));
+        }
+
+        // Mouse tracking for page canvas (uses viewport coordinates directly)
+        window.addEventListener('mousemove', (e) => {
+            pageMouse.x = e.clientX;
+            pageMouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            pageMouse.x = null;
+            pageMouse.y = null;
+        });
+
+        // Start animation
+        if (pageAnimationId) cancelAnimationFrame(pageAnimationId);
+        animatePageStars();
+    }
+
+    initConstellation();
+    initPageConstellation();
+
+    // Resize handler
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(createParticles, 250);
+        resizeTimer = setTimeout(() => {
+            resizeCanvas();
+            resizePageCanvas();
+            // Reinitialize stars on resize
+            stars.forEach(star => star.reset());
+            pageStars.forEach(star => star.reset());
+        }, 250);
     });
 
     /* ----------------------------------------------------------------
