@@ -1,0 +1,42 @@
+{
+  "_comment": "Manual post-edits applied on top of machine translation. The build script reads this and overrides any matching key. Add new entries here whenever the API returns something off, then re-run `node translate-build.js`.",
+
+  "es": {
+    "nav.skills": "Habilidades",
+    "nav.experience": "Experiencia",
+    "hero.ctaContact": "Contáctame",
+    "hero.scroll": "Desplazar",
+    "about.eyebrow": "/ Sobre mí",
+    "about.title": "Creando IA que realmente se implementa.",
+    "about.bio4": "Arquitecto de Automatización",
+    "about.coreStack": "Stack Principal",
+    "projects.eyebrow": "/ Trabajo Destacado",
+    "projects.title": "Proyectos seleccionados.",
+    "skills.eyebrow": "/ Stack",
+    "skills.fullstack.title": "Desarrollo Full-Stack",
+    "experience.eyebrow": "/ Hitos",
+    "experience.title": "Lo que he implementado.",
+    "experience.fs.badge": "Full-Stack",
+    "experience.fs.title": "Full-Stack e Integración en Tiempo Real",
+    "contact.title.after": ".",
+    "contact.linkedinAria": "Perfil de LinkedIn"
+  },
+
+  "pt": {
+    "nav.projects": "Projetos",
+    "hero.scroll": "Rolar",
+    "about.eyebrow": "/ Sobre",
+    "about.bio1": "Eu sou",
+    "about.bio4": "Arquiteto de Automação",
+    "about.title": "Criando IA que realmente vai para produção.",
+    "about.coreStack": "Stack Principal",
+    "projects.eyebrow": "/ Trabalhos em Destaque",
+    "projects.title": "Projetos selecionados.",
+    "projects.multiagent.tag": "IA · Multi-Agente",
+    "skills.eyebrow": "/ Stack",
+    "skills.fullstack.title": "Desenvolvimento Full-Stack",
+    "experience.eyebrow": "/ Destaques",
+    "experience.title": "O que já entreguei.",
+    "footer.copyright": "Matheus Fabio — Feito com cuidado."
+  }
+}
