@@ -36,18 +36,39 @@
             </a>
 
             <nav class="nav-links" id="navLinks" aria-label="Primary">
-                <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                <a href="#about" class="nav-link" data-section="about" data-i18n="nav.about">About</a>
+                <a href="#projects" class="nav-link" data-section="projects" data-i18n="nav.projects">Projects</a>
+                <a href="#skills" class="nav-link" data-section="skills" data-i18n="nav.skills">Skills</a>
+                <a href="#experience" class="nav-link" data-section="experience" data-i18n="nav.experience">Experience</a>
+                <a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a>
             </nav>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-                <span class="nav-toggle-bar" aria-hidden="true"></span>
-                <span class="nav-toggle-bar" aria-hidden="true"></span>
-                <span class="nav-toggle-bar" aria-hidden="true"></span>
-            </button>
+            <div class="nav-actions">
+                <div class="lang-dropdown" role="group" aria-label="Language switcher">
+                    <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="nav.selectLanguage" aria-label="Select language">
+                        <svg class="lang-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="lang-current">EN</span>
+                        <svg class="lang-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <ul class="lang-menu" role="listbox" aria-hidden="true">
+                        <li><button type="button" class="lang-option" data-lang-switch="en" role="option"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span>English</span></button></li>
+                        <li><button type="button" class="lang-option" data-lang-switch="es" role="option"><span class="lang-flag" aria-hidden="true">🇪🇸</span><span>Español</span></button></li>
+                        <li><button type="button" class="lang-option" data-lang-switch="pt" role="option"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span>Português</span></button></li>
+                    </ul>
+                </div>
+
+                <button class="nav-toggle" id="navToggle" data-i18n-aria="nav.openMenu" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -63,32 +84,32 @@
             <div class="container hero-inner">
                 <div class="hero-eyebrow reveal" data-reveal-delay="0">
                     <span class="status-dot" aria-hidden="true"></span>
-                    <span>Open to opportunities</span>
+                    <span data-i18n="hero.status">Open to opportunities</span>
                 </div>
 
                 <h1 class="hero-title reveal" id="heroHeading" data-reveal-delay="100">
-                    <span class="hero-line">Matheus Fabio <span class="hero-surname">Antelo</span></span>
+                    <span class="hero-line"><span data-i18n="hero.firstName">Matheus Fabio</span> <span class="hero-surname" data-i18n="hero.lastName">Antelo</span></span>
                 </h1>
 
-                <p class="hero-subtitle reveal" data-reveal-delay="200">
+                <p class="hero-subtitle reveal" data-reveal-delay="200" data-i18n="hero.subtitle">
                     AI Engineer <span class="text-muted">&amp;</span> Automation Architect
                 </p>
 
-                <p class="hero-tagline reveal" data-reveal-delay="300">
+                <p class="hero-tagline reveal" data-reveal-delay="300" data-i18n="hero.tagline">
                     Building intelligent systems with LLMs, AI agents, and enterprise integrations.
                 </p>
 
                 <div class="hero-cta reveal" data-reveal-delay="400">
                     <a href="#projects" class="btn btn-primary">
-                        View Projects
+                        <span data-i18n="hero.ctaProjects">View Projects</span>
                         <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#contact" class="btn btn-secondary"><span data-i18n="hero.ctaContact">Get in Touch</span></a>
                 </div>
 
                 <div class="hero-scroll reveal" data-reveal-delay="500" aria-hidden="true">
                     <span class="hero-scroll-line"></span>
-                    <span>Scroll</span>
+                    <span data-i18n="hero.scroll">Scroll</span>
                 </div>
             </div>
         </section>
@@ -99,19 +120,19 @@
                 <div class="stats-grid">
                     <div class="stat reveal" data-counter>
                         <div class="stat-value gradient-text" data-target="4" data-suffix="+">5+</div>
-                        <div class="stat-label">Years of Professional Engineering Experience</div>
+                        <div class="stat-label" data-i18n="stats.experience">Years of Professional Engineering Experience</div>
                     </div>
                     <div class="stat reveal" data-counter>
-                        <div class="stat-value gradient-text">Generative AI</div>
-                        <div class="stat-label">RAG Implementations, LLM Solutions, Prompt Engineering</div>
+                        <div class="stat-value gradient-text" data-i18n="stats.genAI.title">Generative AI</div>
+                        <div class="stat-label" data-i18n="stats.genAI.label">RAG Implementations, LLM Solutions, Prompt Engineering</div>
                     </div>
                     <div class="stat reveal" data-counter>
-                        <div class="stat-value gradient-text">Automation</div>
-                        <div class="stat-label">Agentic AI Flows, API Integration, Intelligent Workflow Optimization</div>
+                        <div class="stat-value gradient-text" data-i18n="stats.automation.title">Automation</div>
+                        <div class="stat-label" data-i18n="stats.automation.label">Agentic AI Flows, API Integration, Intelligent Workflow Optimization</div>
                     </div>
                     <div class="stat reveal" data-counter>
-                        <div class="stat-value gradient-text">Cloud Native</div>
-                        <div class="stat-label">AWS · IBM Cloud · GCP · Azure</div>
+                        <div class="stat-value gradient-text" data-i18n="stats.cloud.title">Cloud Native</div>
+                        <div class="stat-label" data-i18n="stats.cloud.label">AWS · IBM Cloud · GCP · Azure</div>
                     </div>
                 </div>
             </div>
@@ -121,20 +142,20 @@
         <section class="about section" id="about" aria-labelledby="aboutHeading">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-eyebrow">/ About</span>
-                    <h2 class="section-title" id="aboutHeading">Crafting AI that actually ships.</h2>
+                    <span class="section-eyebrow" data-i18n="about.eyebrow">/ About</span>
+                    <h2 class="section-title" id="aboutHeading" data-i18n="about.title">Crafting AI that actually ships.</h2>
                 </div>
 
                 <div class="about-grid">
                     <div class="about-bio reveal">
                         <p>
-                            I am an <strong class="gradient-text">AI Engineer</strong> and <strong class="gradient-text">Automation Architect</strong> focused on deploying high-impact, autonomous systems. I specialize in LLMs, RAG, and Agentic AI, turning experimental research into reliable, enterprise-ready software. Let’s build the future of conversational automation together.
+                            <span data-i18n="about.bio1">I am an</span> <strong class="gradient-text" data-i18n="about.bio2">AI Engineer</strong> <span data-i18n="about.bio3">and</span> <strong class="gradient-text" data-i18n="about.bio4">Automation Architect</strong> <span data-i18n="about.bio5">focused on deploying high-impact, autonomous systems. I specialize in LLMs, RAG, and Agentic AI, turning experimental research into reliable, enterprise-ready software. Let’s build the future of conversational automation together.</span>
                         </p>
                     </div>
 
                     <div class="about-skills reveal">
-                        <h3 class="about-skills-title">Core Stack</h3>
-                        <ul class="tag-list" aria-label="Skills">
+                        <h3 class="about-skills-title" data-i18n="about.coreStack">Core Stack</h3>
+                        <ul class="tag-list" data-i18n-aria="about.skillsAria" aria-label="Skills">
                             <li class="tag">AI</li>
                             <li class="tag">LLM</li>
                             <li class="tag">RAG</li>
@@ -161,8 +182,8 @@
         <section class="projects section" id="projects" aria-labelledby="projectsHeading">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-eyebrow">/ Featured Work</span>
-                    <h2 class="section-title" id="projectsHeading">Selected projects.</h2>
+                    <span class="section-eyebrow" data-i18n="projects.eyebrow">/ Featured Work</span>
+                    <h2 class="section-title" id="projectsHeading" data-i18n="projects.title">Selected projects.</h2>
                 </div>
 
                 <div class="projects-grid">
@@ -171,21 +192,21 @@
                             <div class="project-icon" aria-hidden="true">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                             </div>
-                            <span class="project-tag">AI · Multi-Agent</span>
+                            <span class="project-tag" data-i18n="projects.multiagent.tag">AI · Multi-Agent</span>
                         </div>
                         <h3 class="project-title">multiagent-rag</h3>
-                        <p class="project-desc">
-                            Sistema multi-agent com RAG para busca e geração de respostas contextualizadas. Implementa orchestration de agentes especializados com retrieval augmentado.
+                        <p class="project-desc" data-i18n="projects.multiagent.desc">
+                            Multi-agent system with RAG for search and generation of contextualized responses. Implements orchestration of specialized agents with augmented retrieval.
                         </p>
-                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                        <ul class="tag-list tag-list-sm" data-i18n-aria="projects.technologies" aria-label="Technologies used">
                             <li class="tag">Python</li>
                             <li class="tag">RAG</li>
                             <li class="tag">Multi-Agent</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com/FabioAnteloMath/multiagent-rag" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                            <a href="https://github.com/FabioAnteloMath/multiagent-rag" class="project-link" target="_blank" rel="noopener noreferrer" data-i18n-aria="projects.repoAria" aria-label="GitHub repository">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                <span>Repo</span>
+                                <span data-i18n="projects.repo">Repo</span>
                             </a>
                         </div>
                     </article>
@@ -195,21 +216,21 @@
                             <div class="project-icon" aria-hidden="true">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="9" y1="10" x2="15" y2="10"></line><line x1="12" y1="7" x2="12" y2="13"></line></svg>
                             </div>
-                            <span class="project-tag">Automation · Bot</span>
+                            <span class="project-tag" data-i18n="projects.discord.tag">Automation · Bot</span>
                         </div>
                         <h3 class="project-title">discord-task-bot</h3>
-                        <p class="project-desc">
-                            Bot de tarefas para Discord com automação de workflows. Gerencia tarefas, notificações e integração com canais de comunicação.
+                        <p class="project-desc" data-i18n="projects.discord.desc">
+                            Task bot for Discord with workflow automation. Manages tasks, notifications, and integration with communication channels.
                         </p>
-                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                        <ul class="tag-list tag-list-sm" data-i18n-aria="projects.technologies" aria-label="Technologies used">
                             <li class="tag">Python</li>
                             <li class="tag">Discord API</li>
                             <li class="tag">Automation</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com/FabioAnteloMath/discord-task-bot" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                            <a href="https://github.com/FabioAnteloMath/discord-task-bot" class="project-link" target="_blank" rel="noopener noreferrer" data-i18n-aria="projects.repoAria" aria-label="GitHub repository">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                <span>Repo</span>
+                                <span data-i18n="projects.repo">Repo</span>
                             </a>
                         </div>
                     </article>
@@ -219,21 +240,21 @@
                             <div class="project-icon" aria-hidden="true">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                             </div>
-                            <span class="project-tag">Full-Stack · Pets</span>
+                            <span class="project-tag" data-i18n="projects.pets.tag">Full-Stack · Pets</span>
                         </div>
                         <h3 class="project-title">GetaPets</h3>
-                        <p class="project-desc">
-                            Plataforma para adoção e gerenciamento de pets. Sistema completo com cadastro, busca e conexão entre adotantes e ONGs.
+                        <p class="project-desc" data-i18n="projects.pets.desc">
+                            Platform for pet adoption and management. Complete system with registration, search, and connection between adopters and NGOs.
                         </p>
-                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                        <ul class="tag-list tag-list-sm" data-i18n-aria="projects.technologies" aria-label="Technologies used">
                             <li class="tag">JavaScript</li>
                             <li class="tag">Full-Stack</li>
                             <li class="tag">API</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com/FabioAnteloMath/GetaPets" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                            <a href="https://github.com/FabioAnteloMath/GetaPets" class="project-link" target="_blank" rel="noopener noreferrer" data-i18n-aria="projects.repoAria" aria-label="GitHub repository">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                <span>Repo</span>
+                                <span data-i18n="projects.repo">Repo</span>
                             </a>
                         </div>
                     </article>
@@ -243,21 +264,21 @@
                             <div class="project-icon" aria-hidden="true">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="13" y2="17"></line></svg>
                             </div>
-                            <span class="project-tag">Frontend · Task</span>
+                            <span class="project-tag" data-i18n="projects.todo.tag">Frontend · Task</span>
                         </div>
                         <h3 class="project-title">Todo-List</h3>
-                        <p class="project-desc">
-                            Aplicação web de lista de tarefas com interface intuitiva. Gerenciamento de tarefas com funcionalidades de criar, editar e completar.
+                        <p class="project-desc" data-i18n="projects.todo.desc">
+                            Web task list application with intuitive interface. Task management with create, edit, and complete functionality.
                         </p>
-                        <ul class="tag-list tag-list-sm" aria-label="Technologies used">
+                        <ul class="tag-list tag-list-sm" data-i18n-aria="projects.technologies" aria-label="Technologies used">
                             <li class="tag">HTML</li>
                             <li class="tag">JavaScript</li>
                             <li class="tag">CSS</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com/FabioAnteloMath/Todo-List" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                            <a href="https://github.com/FabioAnteloMath/Todo-List" class="project-link" target="_blank" rel="noopener noreferrer" data-i18n-aria="projects.repoAria" aria-label="GitHub repository">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                <span>Repo</span>
+                                <span data-i18n="projects.repo">Repo</span>
                             </a>
                         </div>
                     </article>
@@ -269,8 +290,8 @@
         <section class="skills section" id="skills" aria-labelledby="skillsHeading">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-eyebrow">/ Stack</span>
-                    <h2 class="section-title" id="skillsHeading">Skills &amp; toolbox.</h2>
+                    <span class="section-eyebrow" data-i18n="skills.eyebrow">/ Stack</span>
+                    <h2 class="section-title" id="skillsHeading" data-i18n="skills.title">Skills &amp; toolbox.</h2>
                 </div>
 
                 <div class="skills-grid">
@@ -279,9 +300,9 @@
                             <div class="skill-icon" aria-hidden="true">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6a6 6 0 1 0 6 6"></path><circle cx="12" cy="12" r="2"></circle></svg>
                             </div>
-                            <h3 class="skill-card-title">AI &amp; Automation</h3>
+                            <h3 class="skill-card-title" data-i18n="skills.ai.title">AI &amp; Automation</h3>
                         </div>
-                        <ul class="tag-list" aria-label="AI skills">
+                        <ul class="tag-list" data-i18n-aria="skills.aiAria" aria-label="AI skills">
                             <li class="tag">IBM Watsonx</li>
                             <li class="tag">N8N</li>
                             <li class="tag">Autonomous Agents</li>
@@ -296,9 +317,9 @@
                             <div class="skill-icon" aria-hidden="true">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                             </div>
-                            <h3 class="skill-card-title">Full-Stack Development</h3>
+                            <h3 class="skill-card-title" data-i18n="skills.fullstack.title">Full-Stack Development</h3>
                         </div>
-                        <ul class="tag-list" aria-label="Full-stack skills">
+                        <ul class="tag-list" data-i18n-aria="skills.fullstackAria" aria-label="Full-stack skills">
                             <li class="tag">Node.js</li>
                             <li class="tag">NestJS</li>
                             <li class="tag">Python</li>
@@ -314,9 +335,9 @@
                             <div class="skill-icon" aria-hidden="true">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
                             </div>
-                            <h3 class="skill-card-title">Cloud &amp; Infrastructure</h3>
+                            <h3 class="skill-card-title" data-i18n="skills.cloud.title">Cloud &amp; Infrastructure</h3>
                         </div>
-                        <ul class="tag-list" aria-label="Cloud skills">
+                        <ul class="tag-list" data-i18n-aria="skills.cloudAria" aria-label="Cloud skills">
                             <li class="tag">AWS</li>
                             <li class="tag">GCP</li>
                             <li class="tag">IBM Cloud</li>
@@ -333,8 +354,8 @@
         <section class="experience section" id="experience" aria-labelledby="experienceHeading">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-eyebrow">/ Highlights</span>
-                    <h2 class="section-title" id="experienceHeading">What I've shipped.</h2>
+                    <span class="section-eyebrow" data-i18n="experience.eyebrow">/ Highlights</span>
+                    <h2 class="section-title" id="experienceHeading" data-i18n="experience.title">What I've shipped.</h2>
                 </div>
 
                 <ol class="timeline">
@@ -342,10 +363,10 @@
                         <div class="timeline-marker" aria-hidden="true"></div>
                         <div class="timeline-content">
                             <div class="timeline-meta">
-                                <span class="timeline-badge">AI Orchestration</span>
+                                <span class="timeline-badge" data-i18n="experience.ai.badge">AI Orchestration</span>
                             </div>
-                            <h3 class="timeline-title">Enterprise AI Orchestration</h3>
-                            <p class="timeline-desc">
+                            <h3 class="timeline-title" data-i18n="experience.ai.title">Enterprise AI Orchestration</h3>
+                            <p class="timeline-desc" data-i18n="experience.ai.desc">
                                 Architected multi-agent systems on IBM watsonx and event-driven automation pipelines (n8n), hyper-scaling operational efficiency across business units.
                             </p>
                         </div>
@@ -355,10 +376,10 @@
                         <div class="timeline-marker" aria-hidden="true"></div>
                         <div class="timeline-content">
                             <div class="timeline-meta">
-                                <span class="timeline-badge">Conversational AI</span>
+                                <span class="timeline-badge" data-i18n="experience.conv.badge">Conversational AI</span>
                             </div>
-                            <h3 class="timeline-title">Global Conversational Systems</h3>
-                            <p class="timeline-desc">
+                            <h3 class="timeline-title" data-i18n="experience.conv.title">Global Conversational Systems</h3>
+                            <p class="timeline-desc" data-i18n="experience.conv.desc">
                                 Designed multilingual NLU architectures (English &amp; Arabic) and advanced GenAI/RAG pipelines, enhancing intent recognition and dialogue fluidity.
                             </p>
                         </div>
@@ -368,10 +389,10 @@
                         <div class="timeline-marker" aria-hidden="true"></div>
                         <div class="timeline-content">
                             <div class="timeline-meta">
-                                <span class="timeline-badge">Full-Stack</span>
+                                <span class="timeline-badge" data-i18n="experience.fs.badge">Full-Stack</span>
                             </div>
-                            <h3 class="timeline-title">Full-Stack &amp; Real-Time Integration</h3>
-                            <p class="timeline-desc">
+                            <h3 class="timeline-title" data-i18n="experience.fs.title">Full-Stack &amp; Real-Time Integration</h3>
+                            <p class="timeline-desc" data-i18n="experience.fs.desc">
                                 Engineered robust backend services and embeddable React widgets with real-time streaming and CRM integrations (Salesforce).
                             </p>
                         </div>
@@ -381,10 +402,10 @@
                         <div class="timeline-marker" aria-hidden="true"></div>
                         <div class="timeline-content">
                             <div class="timeline-meta">
-                                <span class="timeline-badge">Infrastructure</span>
+                                <span class="timeline-badge" data-i18n="experience.infra.badge">Infrastructure</span>
                             </div>
-                            <h3 class="timeline-title">Scalable Multi-Cloud Infrastructure</h3>
-                            <p class="timeline-desc">
+                            <h3 class="timeline-title" data-i18n="experience.infra.title">Scalable Multi-Cloud Infrastructure</h3>
+                            <p class="timeline-desc" data-i18n="experience.infra.desc">
                                 Deployed high-availability multi-cloud architectures (AWS, GCP, IBM Cloud, OpenShift/Kubernetes) for intensive AI workloads.
                             </p>
                         </div>
@@ -402,39 +423,39 @@
 
             <div class="container contact-inner">
                 <div class="reveal">
-                    <span class="section-eyebrow">/ Contact</span>
+                    <span class="section-eyebrow" data-i18n="contact.eyebrow">/ Contact</span>
                     <h2 class="section-title contact-title" id="contactHeading">
-                        Let's build something <span class="gradient-text">together</span>.
+                        <span data-i18n="contact.title.before">Let's build something</span> <span class="gradient-text" data-i18n="contact.title.highlight">together</span><span data-i18n="contact.title.after">.</span>
                     </h2>
-                    <p class="contact-subtitle">
+                    <p class="contact-subtitle" data-i18n="contact.subtitle">
                         Whether it's a complex AI workflow, a production-grade LLM integration, or a conversational system — I'm always up for a good challenge.
                     </p>
                 </div>
 
                 <div class="contact-actions reveal">
                     <a href="mailto:matheusfabio13@hotmail.com" class="btn btn-primary btn-lg">
-                        Get in Touch
+                        <span data-i18n="contact.cta">Get in Touch</span>
                         <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
                 </div>
 
-                <ul class="socials reveal" aria-label="Social links">
+                <ul class="socials reveal" data-i18n-aria="contact.socialsAria" aria-label="Social links">
                     <li>
-                        <a href="https://github.com/FabioAnteloMath" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <a href="https://github.com/FabioAnteloMath" class="social-link" target="_blank" rel="noopener noreferrer" data-i18n-aria="contact.githubAria" aria-label="GitHub profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            <span>GitHub</span>
+                            <span data-i18n="contact.github">GitHub</span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/matheusfabio/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <a href="https://www.linkedin.com/in/matheusfabio/" class="social-link" target="_blank" rel="noopener noreferrer" data-i18n-aria="contact.linkedinAria" aria-label="LinkedIn profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            <span>LinkedIn</span>
+                            <span data-i18n="contact.linkedin">LinkedIn</span>
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:matheusfabio13@hotmail.com" class="social-link" aria-label="Send email">
+                        <a href="mailto:matheusfabio13@hotmail.com" class="social-link" data-i18n-aria="contact.emailAria" aria-label="Send email">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span>Email</span>
+                            <span data-i18n="contact.email">Email</span>
                         </a>
                     </li>
                 </ul>
@@ -444,11 +465,13 @@
 
     <footer class="footer" role="contentinfo">
         <div class="container footer-inner">
-            <p>&copy; <span id="year"></span> Matheus Fabio — Built with care.</p>
-            <p class="footer-tech">Vanilla HTML · CSS · JS</p>
+            <p>&copy; <span id="year"></span> <span data-i18n="footer.copyright">Matheus Fabio — Built with care.</span></p>
+            <p class="footer-tech" data-i18n="footer.tech">Vanilla HTML · CSS · JS</p>
         </div>
     </footer>
 
+    <script src="i18n.translations.js" defer></script>
+    <script src="i18n.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>

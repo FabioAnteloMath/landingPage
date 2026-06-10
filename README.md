@@ -10,14 +10,61 @@ Built with vanilla HTML, CSS, and JavaScript. **No frameworks, no build step, no
 
 ```
 landing-page/
-├── index.html      # Semantic structure, all 7 sections
-├── 404.html        # Custom not-found page (GH Pages picks it up automatically)
-├── styles.css      # Design system + responsive layout
-├── script.js       # Interactivity (nav, scroll, counter, particles)
-├── .nojekyll       # Tells GitHub Pages to skip Jekyll — pure static deploy
-├── .gitignore      # OS / editor noise
-└── README.md       # This file
+├── index.html             # Semantic structure, all 7 sections, i18n markup
+├── 404.html               # Custom not-found page (GH Pages picks it up automatically)
+├── styles.css             # Design system + responsive layout
+├── script.js              # Interactivity (nav, scroll, counter, particles)
+├── i18n.js                # Runtime: applies translations, persists choice
+├── i18n.translations.js   # Generated dictionary (en/es/pt)
+├── i18n.source.json       # Source strings in EN (editable)
+├── i18n.overrides.json    # Manual post-edits to fix machine-translation errors
+├── translate-build.js     # Calls MyMemory API → writes i18n.translations.js
+├── assets/avatar.jpg      # Profile photo
+├── .nojekyll              # Tells GitHub Pages to skip Jekyll — pure static deploy
+├── .gitignore             # OS / editor noise
+└── README.md              # This file
 ```
+
+---
+
+## Internationalization (i18n)
+
+The page ships in **English**, **Español**, and **Português** with a language switcher in the navbar.
+
+- **Source of truth:** `i18n.source.json` — flat dictionary of keys → English strings
+- **Build step:** `node translate-build.js` calls the free [MyMemory](https://mymemory.translated.net) API for `es` and `pt`, then layers any manual fixes from `i18n.overrides.json` on top
+- **Runtime:** `i18n.js` reads the generated dictionary, applies translations on load, and persists the user's choice in `localStorage`
+- **Detection:** first visit picks `navigator.language` if it's one of the supported codes; otherwise falls back to `en`
+
+### Refreshing translations
+
+```bash
+# Edit the English source…
+$EDITOR i18n.source.json
+
+# …then re-pull the other languages from the API:
+node translate-build.js
+```
+
+The build script prints which keys were machine-translated vs. overridden, so you always know which strings were hand-edited.
+
+### Add a new language
+
+1. Add the code to `TARGETS` in `translate-build.js`
+2. Add the flag + label to the `<ul class="lang-menu">` in `index.html`
+3. Add the code to `SUPPORTED` in `i18n.js`
+4. Run `node translate-build.js`
+
+### Add a new string
+
+1. Add the key + English value to `i18n.source.json`
+2. Tag the matching DOM element with `data-i18n="<key>"` (or `data-i18n-aria` for `aria-label`)
+3. Run `node translate-build.js` to translate the new key
+
+### API notes
+
+- MyMemory is free and keyless for low volume, but throttles around ~5k chars/day per IP. The build script batches 4 requests at a time with retries and graceful EN fallbacks.
+- For production-grade volume, swap the URL in `translate-build.js` (DeepL, Google Cloud Translation, etc.) — the build script is ~80 lines and easy to replace.
 
 ---
 
@@ -32,6 +79,8 @@ This repo is already wired for static GitHub Pages — no build step, no theme, 
 
 In about a minute the site will be live at:
 **`https://fabioantlomath.github.io/landingPage/`**
+
+The `node translate-build.js` step is **optional** in production — `i18n.translations.js` is already committed. You only re-run it when the source strings change.
 
 ---
 
@@ -107,6 +156,8 @@ Change any value and the whole page updates.
 | Social links | `index.html` contact | `href` on `.social-link` and the hero CTAs |
 | Email address | `index.html` contact + `mailto:` CTAs | search for `matheusfabio13@hotmail.com` |
 | Number of particles | `script.js` | `const count = ...` inside `createParticles()` |
+| Add a translated string | `i18n.source.json` + `index.html` | add key/value, then tag the DOM with `data-i18n="key"`, then `node translate-build.js` |
+| Add a new language | `i18n.js` + `translate-build.js` + `index.html` | add code to `SUPPORTED` and `TARGETS`, add a `<li>` to the lang menu, run build |
 
 ---
 
@@ -132,6 +183,8 @@ Change any value and the whole page updates.
 - ✅ `IntersectionObserver` for reveal + counter + active nav
 - ✅ 60fps CSS animations (transforms + opacity only)
 - ✅ Inline SVG icons (no emoji, no icon font, no icon CDN)
+- ✅ Trilingual i18n (EN / ES / PT) with language switcher, `localStorage` persistence, and `navigator.language` detection
+- ✅ `html[lang]` updates on language change (a11y + SEO)
 - ✅ System fonts fallback if Google Fonts fail
 - ✅ No external runtime dependencies
 - ✅ Lighthouse-friendly: <100KB total (no images, all CSS+JS in source)
