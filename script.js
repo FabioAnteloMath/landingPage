@@ -97,7 +97,7 @@
     /* ----------------------------------------------------------------
        3. Active section indicator (IntersectionObserver)
     ---------------------------------------------------------------- */
-    const sectionIds = ['about', 'projects', 'skills', 'experience', 'contact'];
+    const sectionIds = ['about', 'projects', 'skills', 'github', 'experience', 'contact'];
     const navLinkMap = new Map();
 
     sectionIds.forEach((id) => {

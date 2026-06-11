@@ -4,6 +4,7 @@
   "nav.skills": "Skills",
   "nav.experience": "Experience",
   "nav.contact": "Contact",
+  "nav.github": "GitHub",
   "nav.openMenu": "Open menu",
   "nav.closeMenu": "Close menu",
   "nav.selectLanguage": "Select language",
@@ -53,6 +54,10 @@
 
   "skills.eyebrow": "/ Stack",
   "skills.title": "Skills & toolbox.",
+
+  "github.eyebrow": "/ Open Source",
+  "github.title": "GitHub activity.",
+  "github.note": "Live data from the GitHub API. Updates every few hours.",
   "skills.ai.title": "AI & Automation",
   "skills.fullstack.title": "Full-Stack Development",
   "skills.cloud.title": "Cloud & Infrastructure",

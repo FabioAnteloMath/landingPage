@@ -1261,6 +1261,86 @@ ol {
     letter-spacing: -0.01em;
 }
 
+/* ---------- 12b. GITHUB STATS ---------- */
+.github {
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, var(--glow) 0%, transparent 70%);
+}
+
+.github-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "stats   langs"
+        "streak  langs";
+    gap: var(--space-md);
+    align-items: start;
+    justify-items: center;
+}
+
+.github-card {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    transition: transform var(--transition-base), border-color var(--transition-base);
+    max-width: 100%;
+}
+.github-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+}
+.github-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+.github-card-streak {
+    grid-area: streak;
+    width: 100%;
+}
+.github-card:nth-child(1) { grid-area: stats; width: 100%; }
+.github-card:nth-child(2) { grid-area: langs; width: 100%; max-width: 360px; }
+
+.github-card-error {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed var(--border-hover);
+    padding: var(--space-lg);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.github-card-error::after {
+    content: '⚠ Card unavailable — github-readme-stats is having a moment. Direct link: github.com/FabioAnteloMath';
+    max-width: 320px;
+}
+
+.github-note {
+    margin-top: var(--space-lg);
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+    .github-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "stats"
+            "langs"
+            "streak";
+    }
+    .github-card:nth-child(2) { max-width: 100%; }
+}
+
 /* ---------- 13. EXPERIENCE TIMELINE ---------- */
 .timeline {
     position: relative;
