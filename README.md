@@ -169,7 +169,7 @@ Change any value and the whole page updates.
 | Projects | `index.html` projects | Each `.project-card` block |
 | Skills list | `index.html` skills | Each `.tag` inside `.skill-card` |
 | Social links | `index.html` contact | `href` on `.social-link` and the hero CTAs |
-| Email address | `index.html` contact + `mailto:` CTAs | search for `matheus.antelo@gmail.com` |
+| Email address | `index.html` contact + `mailto:` CTAs | search for `matheusf.antelo@gmail.com` |
 | Number of particles | `script.js` | `const count = ...` inside `createParticles()` |
 | Add a translated string | `i18n.source.json` + `index.html` | add key/value, then tag the DOM with `data-i18n="key"`, then `node translate-build.js` |
 | Add a new language | `i18n.js` + `translate-build.js` + `index.html` | add code to `SUPPORTED` and `TARGETS`, add a `<li>` to the lang menu, run build |
