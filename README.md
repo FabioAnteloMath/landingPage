@@ -11,12 +11,16 @@ Built with vanilla HTML, CSS, and JavaScript. **No frameworks, no build step, no
 ```
 landing-page/
 ├── index.html             # Semantic structure, all 7 sections, i18n markup, SEO meta
+├── cv.html                # Print-friendly CV (ES/EN/PT) with toggle, ready for "Save as PDF"
+├── cv-print.css           # CV-specific styles (screen + print media query)
+├── cv-translations.js     # Hand-curated ES/EN/PT strings for the CV
+├── cv.js                  # CV runtime: language switch, print trigger
 ├── 404.html               # Custom not-found page (GH Pages picks it up automatically)
 ├── sitemap.xml            # Search-engine sitemap with hreflang alternates
 ├── robots.txt             # Crawler rules + sitemap pointer
 ├── site.webmanifest       # PWA manifest (installable, theme color, icons)
 ├── styles.css             # Design system + responsive layout
-├── script.js              # Interactivity (nav, scroll, counter, particles)
+├── script.js              # Interactivity (nav, scroll, counter, particles, CV dropdown)
 ├── i18n.js                # Runtime: applies translations, persists choice
 ├── i18n.translations.js   # Generated dictionary (en/es/pt)
 ├── i18n.source.json       # Source strings in EN (editable)
@@ -25,7 +29,7 @@ landing-page/
 ├── assets/
 │   ├── avatar.jpg         # Profile photo
 │   ├── og-image.jpg       # Open Graph / Twitter card (1200×630, 89KB)
-│   ├── favicon.svg        # Modern vector favicon (circular avatar + gradient ring)
+│   ├── favicon.svg        # Modern vector favicon (neural-network symbol on gradient)
 │   ├── favicon-32x32.png  # Browser tab favicon
 │   ├── favicon-16x16.png  # Small browser tab / bookmark favicon
 │   ├── apple-touch-icon.png  # iOS home-screen icon (180×180)
@@ -165,7 +169,7 @@ Change any value and the whole page updates.
 | Projects | `index.html` projects | Each `.project-card` block |
 | Skills list | `index.html` skills | Each `.tag` inside `.skill-card` |
 | Social links | `index.html` contact | `href` on `.social-link` and the hero CTAs |
-| Email address | `index.html` contact + `mailto:` CTAs | search for `matheusfabio13@hotmail.com` |
+| Email address | `index.html` contact + `mailto:` CTAs | search for `matheus.antelo@gmail.com` |
 | Number of particles | `script.js` | `const count = ...` inside `createParticles()` |
 | Add a translated string | `i18n.source.json` + `index.html` | add key/value, then tag the DOM with `data-i18n="key"`, then `node translate-build.js` |
 | Add a new language | `i18n.js` + `translate-build.js` + `index.html` | add code to `SUPPORTED` and `TARGETS`, add a `<li>` to the lang menu, run build |
@@ -215,8 +219,33 @@ Change any value and the whole page updates.
 
 ### Customizing the favicon / OG image
 
-- **Favicon** is derived from `assets/avatar.jpg` — drop a new `avatar.jpg` in `assets/` and rebuild the set with any tool of choice (Pillow / `convert` / online). Recommended sizes: SVG (modern), 16×16 PNG, 32×32 PNG, 180×180 apple-touch, 192×192 and 512×512 for Android.
+- **Favicon** is the AI/neural-network symbol on a purple gradient. Replace `assets/favicon.svg` (and the PNGs) any time — keep the same file names so the `<link rel="icon">` tags keep working.
 - **OG image** (`assets/og-image.jpg`, 1200×630, 89KB) was generated from the avatar using a generative image service and then resized with Pillow. Replace it with your own design any time — keep the file path and dimensions so the meta tags keep working.
+
+---
+
+## Curriculum Vitae
+
+The hero CTA **Download CV** links to `cv.html?lang=es|en|pt` — a print-friendly, A4-sized CV page styled to match the site (same gradient, same typography, same avatar with the purple ring).
+
+### Sharing a PDF
+
+There is **no pre-generated PDF** in the repo on purpose — the CV is meant to be exported on demand:
+
+1. Open `https://fabioantelomath.github.io/landingPage/cv.html?lang=en` (or `es` / `pt`)
+2. Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd> on macOS)
+3. Pick "Save as PDF" as the destination
+4. The toolbar, language switcher, and backdrop are automatically hidden by the `@media print` rules
+
+**Why HTML, not a committed PDF?**
+- The CV stays in sync with `index.html` — edit once, deploy once
+- The recruiter can pick the language right in the page before exporting
+- No ~300KB binary in git
+- Any browser exports it at full A4 quality
+
+### Editing the CV content
+
+The CV strings live in **`cv-translations.js`** as a flat dictionary per language (no API call, no machine translation — these are hand-edited because CV wording is too important to leave to a generic translator). To add a job or a certification, edit `cv.html` and the corresponding entries in `cv-translations.js`.
 
 ---
 

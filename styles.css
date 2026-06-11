@@ -794,6 +794,91 @@ ol {
     margin-bottom: var(--space-3xl);
 }
 
+/* CV download dropdown — matches the navbar lang-dropdown visual language
+   but adapted to the .btn secondary style for the hero */
+.cv-dropdown {
+    position: relative;
+    display: inline-flex;
+}
+.cv-trigger {
+    /* inherits .btn .btn-secondary; just needs to align the caret cleanly */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+.cv-trigger .cv-caret {
+    opacity: 0.7;
+    transition: transform var(--transition-base);
+}
+.cv-dropdown.is-open .cv-trigger .cv-caret {
+    transform: rotate(180deg);
+}
+.cv-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 200px;
+    padding: 0.4rem;
+    background: rgba(18, 18, 26, 0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border-hover);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    transform-origin: top left;
+    pointer-events: none;
+    transition: opacity var(--transition-base),
+                transform var(--transition-base);
+}
+.cv-dropdown.is-open .cv-menu {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+.cv-option {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color var(--transition-base),
+                background var(--transition-base);
+}
+.cv-option:hover,
+.cv-option:focus-visible {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    outline: 0;
+}
+.cv-option .cv-flag {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+@media (max-width: 480px) {
+    .cv-menu {
+        left: 0;
+        right: auto;
+        min-width: 180px;
+    }
+}
+
 .hero-scroll {
     position: absolute;
     bottom: var(--space-2xl);

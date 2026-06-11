@@ -497,5 +497,48 @@
                 });
             });
         }
+
+    /* ----------------------------------------------------------------
+       11. CV download dropdown (hero)
+    ---------------------------------------------------------------- */
+    const cvDropdown = document.querySelector('.cv-dropdown');
+    const cvTrigger = cvDropdown && cvDropdown.querySelector('.cv-trigger');
+    const cvMenu = cvDropdown && cvDropdown.querySelector('.cv-menu');
+
+    function closeCvMenu() {
+        if (!cvDropdown) return;
+        cvDropdown.classList.remove('is-open');
+        if (cvTrigger) cvTrigger.setAttribute('aria-expanded', 'false');
+        if (cvMenu) cvMenu.setAttribute('aria-hidden', 'true');
+        document.removeEventListener('click', onCvDocClick);
+        document.removeEventListener('keydown', onCvKey);
+    }
+
+    function openCvMenu() {
+        if (!cvDropdown) return;
+        cvDropdown.classList.add('is-open');
+        if (cvTrigger) cvTrigger.setAttribute('aria-expanded', 'true');
+        if (cvMenu) cvMenu.setAttribute('aria-hidden', 'false');
+        setTimeout(() => {
+            document.addEventListener('click', onCvDocClick);
+            document.addEventListener('keydown', onCvKey);
+        }, 0);
+    }
+
+    function onCvDocClick(e) {
+        if (!cvDropdown.contains(e.target)) closeCvMenu();
+    }
+
+    function onCvKey(e) {
+        if (e.key === 'Escape') closeCvMenu();
+    }
+
+    if (cvTrigger) {
+        cvTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (cvDropdown.classList.contains('is-open')) closeCvMenu();
+            else openCvMenu();
+        });
     }
 })();

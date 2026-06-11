@@ -23,11 +23,15 @@
   },
 
   "pt": {
+    "nav.about": "Sobre",
     "nav.projects": "Projetos",
+    "nav.experience": "Experiência",
+    "nav.contact": "Contato",
+    "hero.ctaContact": "Fale comigo",
+    "hero.ctaCv": "Baixar CV",
     "hero.scroll": "Rolar",
+    "stats.experience": "Anos de Experiência Profissional em Engenharia",
     "about.eyebrow": "/ Sobre",
-    "about.bio1": "Eu sou",
-    "about.bio4": "Arquiteto de Automação",
     "about.title": "Criando IA que realmente vai para produção.",
     "about.coreStack": "Stack Principal",
     "projects.eyebrow": "/ Trabalhos em Destaque",

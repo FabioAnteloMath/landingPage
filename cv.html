@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Matheus Fabio Antelo — Currículum Vitae</title>
+    <meta name="description" content="CV of Matheus Fabio Antelo — AI Engineer & Automation Architect. Available in Spanish, English, and Portuguese.">
+    <link rel="canonical" href="https://fabioantelomath.github.io/landingPage/cv.html">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cv-print.css">
+    <script src="cv-translations.js" defer></script>
+    <script src="cv.js" defer></script>
+</head>
+<body class="cv-page">
+
+    <!-- Floating toolbar (hidden on print) -->
+    <div class="cv-toolbar" role="toolbar" aria-label="CV options">
+        <div class="cv-toolbar-inner">
+            <a href="./" class="cv-back" aria-label="Back to home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span data-cv="toolbar.back">Back to home</span>
+            </a>
+
+            <div class="cv-lang-switch" role="group" aria-label="CV language">
+                <button type="button" class="cv-lang-btn" data-cv-lang="es" aria-pressed="true" title="Español">ES</button>
+                <button type="button" class="cv-lang-btn" data-cv-lang="en" aria-pressed="false" title="English">EN</button>
+                <button type="button" class="cv-lang-btn" data-cv-lang="pt" aria-pressed="false" title="Português">PT</button>
+            </div>
+
+            <button type="button" class="cv-print" id="cvPrint">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                <span data-cv="toolbar.print">Print / Save as PDF</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- The CV sheet (A4) -->
+    <main class="cv-sheet" id="cvSheet">
+
+        <!-- =================== HEADER =================== -->
+        <header class="cv-header">
+            <div class="cv-avatar-wrap">
+                <img class="cv-avatar" src="assets/avatar.jpg" alt="Matheus Fabio Antelo" width="140" height="140" loading="eager">
+                <div class="cv-avatar-ring" aria-hidden="true"></div>
+            </div>
+            <div class="cv-name-block">
+                <h1 class="cv-name">Matheus Fabio<br>Antelo</h1>
+                <p class="cv-role" data-cv="role">AI Engineer &amp; Automation Architect</p>
+                <p class="cv-tagline" data-cv="tagline">Building intelligent systems with LLMs, AI agents, and enterprise integrations.</p>
+            </div>
+        </header>
+
+        <div class="cv-grid">
+
+            <!-- =================== LEFT COLUMN =================== -->
+            <aside class="cv-col-left">
+
+                <!-- Contact -->
+                <section class="cv-section cv-contact">
+                    <h2 class="cv-section-title">
+                        <svg class="cv-section-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span data-cv="contact.title">Contacto</span>
+                    </h2>
+                    <ul class="cv-contact-list">
+                        <li>
+                            <span class="cv-contact-label" data-cv="contact.email">Email</span>
+                            <a href="mailto:matheus.antelo@gmail.com" class="cv-contact-value">matheus.antelo@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="cv-contact-label" data-cv="contact.phone">Phone</span>
+                            <a href="tel:+5511963187136" class="cv-contact-value">+55 11 96318-7136</a>
+                        </li>
+                        <li>
+                            <span class="cv-contact-label" data-cv="contact.location">Location</span>
+                            <span class="cv-contact-value" data-cv="contact.locationValue">Brasil — disponible para reubicación en España</span>
+                        </li>
+                        <li>
+                            <span class="cv-contact-label" data-cv="contact.linkedin">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/matheusfabio/" class="cv-contact-value" target="_blank" rel="noopener noreferrer">linkedin.com/in/matheusfabio</a>
+                        </li>
+                        <li>
+                            <span class="cv-contact-label" data-cv="contact.github">GitHub</span>
+                            <a href="https://github.com/FabioAnteloMath" class="cv-contact-value" target="_blank" rel="noopener noreferrer">github.com/FabioAnteloMath</a>
+                        </li>
+                        <li>
+                            <span class="cv-contact-label" data-cv="contact.website">Website</span>
+                            <a href="https://fabioantelomath.github.io/landingPage/" class="cv-contact-value" target="_blank" rel="noopener noreferrer">fabioantelomath.github.io/landingPage</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Skills -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">
+                        <svg class="cv-section-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 0 2.83-2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 0 2.83 2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 0-2.83 2.83l.06.06a1.65 1.65 0 0 0 1.82.33H3a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 0-2.83-2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V3a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        <span data-cv="skills.title">Habilidades</span>
+                    </h2>
+                    <div class="cv-skill-group">
+                        <h3 class="cv-skill-group-title" data-cv="skills.ai">IA &amp; Automatización</h3>
+                        <p class="cv-skill-list">Generative AI · RAG · Multi-Agent Systems · IBM watsonx · IBM Watson Assistant · N8N · Agentic AI · Prompt Engineering</p>
+                    </div>
+                    <div class="cv-skill-group">
+                        <h3 class="cv-skill-group-title" data-cv="skills.dev">Desarrollo</h3>
+                        <p class="cv-skill-list">Python · Node.js · TypeScript · NestJS · React.js · Next.js · REST APIs · Microservices</p>
+                    </div>
+                    <div class="cv-skill-group">
+                        <h3 class="cv-skill-group-title" data-cv="skills.cloud">Cloud &amp; Infra</h3>
+                        <p class="cv-skill-list">AWS · Kubernetes · OpenShift · Docker · CI/CD · Multi-cloud · IBM Cloud · GCP</p>
+                    </div>
+                    <div class="cv-skill-group">
+                        <h3 class="cv-skill-group-title" data-cv="skills.security">Seguridad</h3>
+                        <p class="cv-skill-list">OWASP for LLMs · AI Security</p>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">
+                        <svg class="cv-section-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <span data-cv="langs.title">Idiomas</span>
+                    </h2>
+                    <ul class="cv-lang-list">
+                        <li>
+                            <span class="cv-lang-name" data-cv="langs.es">Español</span>
+                            <span class="cv-lang-level" data-cv="langs.esLevel">Avanzado</span>
+                        </li>
+                        <li>
+                            <span class="cv-lang-name" data-cv="langs.pt">Portugués</span>
+                            <span class="cv-lang-level" data-cv="langs.ptLevel">Nativo</span>
+                        </li>
+                        <li>
+                            <span class="cv-lang-name" data-cv="langs.en">Inglés</span>
+                            <span class="cv-lang-level" data-cv="langs.enLevel">Intermedio Alto (B2)</span>
+                        </li>
+                        <li>
+                            <span class="cv-lang-name" data-cv="langs.it">Italiano</span>
+                            <span class="cv-lang-level" data-cv="langs.itLevel">Básico (A1)</span>
+                        </li>
+                    </ul>
+                </section>
+
+            </aside>
+
+            <!-- =================== RIGHT COLUMN =================== -->
+            <section class="cv-col-right">
+
+                <!-- About -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">
+                        <svg class="cv-section-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span data-cv="about.title">Sobre mí</span>
+                    </h2>
+                    <p class="cv-about" data-cv="about.body">Soy ingeniero de Inteligencia Artificial Generativa y Desarrollo Backend con experiencia en diseño de sistemas multiagente, arquitecturas RAG, integración de LLMs y automatización empresarial. Tengo experiencia liderando proyectos de IA conversacional para grandes empresas, desarrollando soluciones escalables con Python, Node.js, NestJS, Kubernetes y watsonx. Tengo capacidad para transformar necesidades de negocio en plataformas inteligentes, seguras y escalables, combinando arquitectura cloud, procesamiento de lenguaje natural e integración con sistemas corporativos.</p>
+                </section>
+
+                <!-- Experience -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">
+                        <svg class="cv-section-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <span data-cv="exp.title">Experiencia Profesional</span>
+                    </h2>
+
+                    <article class="cv-job">
+                        <div class="cv-job-head">
+                            <h3 class="cv-job-title" data-cv="exp.jobs.0.title">AI Engineer</h3>
+                            <span class="cv-job-period" data-cv="exp.jobs.0.period">Jan 2026 – Present</span>
+                        </div>
+                        <p class="cv-job-meta"><strong>CXP</strong> — <span data-cv="country.br">Brasil</span></p>
+                        <ul class="cv-job-bullets">
+                            <li data-cv="exp.jobs.0.b0">Diseño e implementación de arquitecturas multiagente utilizando IBM watsonx Orchestrate y protocolo MCP.</li>
+                            <li data-cv="exp.jobs.0.b1">Desarrollo de servicios de orquestación con NestJS y TypeScript para entornos empresariales.</li>
+                            <li data-cv="exp.jobs.0.b2">Implementación de soluciones RAG con Python y bases de datos vectoriales para recuperación avanzada de conocimiento.</li>
+                        </ul>
+                    </article>
+
+                    <article class="cv-job">
+                        <div class="cv-job-head">
+                            <h3 class="cv-job-title" data-cv="exp.jobs.1.title">Senior Full Stack AI Developer — IBM Watson Assistant</h3>
+                            <span class="cv-job-period" data-cv="exp.jobs.1.period">May 2025 – Dec 2025</span>
+                        </div>
+                        <p class="cv-job-meta"><strong>BRF (Sadia)</strong> — <span data-cv="country.br">Brasil</span></p>
+                        <ul class="cv-job-bullets">
+                            <li data-cv="exp.jobs.1.b0">Desarrollo de arquitecturas RAG integradas con modelos fundacionales y bases de datos vectoriales.</li>
+                            <li data-cv="exp.jobs.1.b1">Integración de APIs corporativas y Salesforce para automatización de procesos y personalización de experiencias.</li>
+                            <li data-cv="exp.jobs.1.b2">Desarrollo de soluciones conversacionales multilingües (EN, ES, PT, AR).</li>
+                            <li data-cv="exp.jobs.1.b3">Optimización del rendimiento y precisión de asistentes inteligentes.</li>
+                        </ul>
+                    </article>
+
+                    <article class="cv-job">
+                        <div class="cv-job-head">
+                            <h3 class="cv-job-title" data-cv="exp.jobs.2.title">Full Stack AI Developer — IBM Watson Assistant</h3>
+                            <span class="cv-job-period" data-cv="exp.jobs.2.period">Feb 2024 – Apr 2025</span>
+                        </div>
+                        <p class="cv-job-meta"><strong>ONNI.IA</strong> — <span data-cv="country.br">Brasil</span></p>
+                        <ul class="cv-job-bullets">
+                            <li data-cv="exp.jobs.2.b0">Desarrollo de chatbots corporativos avanzados utilizando IBM Watson Assistant e IA Generativa.</li>
+                            <li data-cv="exp.jobs.2.b1">Implementación de integraciones omnicanal para atención al cliente y automatización empresarial.</li>
+                            <li data-cv="exp.jobs.2.b2">Diseño de flujos conversacionales.</li>
+                        </ul>
+                    </article>
+
+                    <article class="cv-job">
+                        <div class="cv-job-head">
+                            <h3 class="cv-job-title" data-cv="exp.jobs.3.title">Full Stack AI Developer — IBM Watson Assistant</h3>
+                            <span class="cv-job-period" data-cv="exp.jobs.3.period">Oct 2022 – Feb 2024</span>
+                        </div>
+                        <p class="cv-job-meta"><strong>Reach</strong> — <span data-cv="country.br">Brasil</span></p>
+                        <ul class="cv-job-bullets">
+                            <li data-cv="exp.jobs.3.b0">Desarrollo de APIs RESTful y microservicios para integración de sistemas corporativos.</li>
+                            <li data-cv="exp.jobs.3.b1">Participación en migración de aplicaciones monolíticas hacia arquitecturas modernas.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- Education -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">
+                        <svg class="cv-section-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        <span data-cv="edu.title">Formación &amp; Certificaciones</span>
+                    </h2>
+                    <ul class="cv-edu-list">
+                        <li>
+                            <span class="cv-edu-name" data-cv="edu.degree">Grado en Ingeniería de Software</span>
+                            <span class="cv-edu-meta" data-cv="edu.school">AMPLI — São Paulo, Brasil — 2022 – Actualidad</span>
+                        </li>
+                        <li data-cv="edu.c0">AWS Certified Cloud Practitioner</li>
+                        <li data-cv="edu.c1">IBM Containers &amp; Kubernetes Essentials</li>
+                        <li data-cv="edu.c2">Linux Fundamentals</li>
+                        <li data-cv="edu.c3">FIAP Cloud Fundamentals</li>
+                        <li data-cv="edu.c4">FIAP Administration &amp; Solution Architect</li>
+                    </ul>
+                </section>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
