@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e0d4ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="2" y="2" width="96" height="96" rx="22" ry="22" fill="url(#bg)"/>
+
+  <!-- Neural network symbol: center node + 4 satellite nodes (top/right/bottom/left) -->
+  <g filter="url(#glow)" stroke="url(#node)" stroke-width="2.2" stroke-linecap="round" fill="none">
+    <!-- center to top -->
+    <line x1="50" y1="50" x2="50" y2="22"/>
+    <!-- center to right -->
+    <line x1="50" y1="50" x2="78" y2="50"/>
+    <!-- center to bottom -->
+    <line x1="50" y1="50" x2="50" y2="78"/>
+    <!-- center to left -->
+    <line x1="50" y1="50" x2="22" y2="50"/>
+
+    <!-- diagonal accent traces -->
+    <path d="M 50 30 L 60 25"/>
+    <path d="M 70 50 L 75 60"/>
+    <path d="M 50 70 L 40 75"/>
+    <path d="M 30 50 L 25 40"/>
+  </g>
+
+  <!-- Nodes -->
+  <g fill="url(#node)">
+    <!-- center (larger) -->
+    <circle cx="50" cy="50" r="6.5"/>
+    <!-- satellites -->
+    <circle cx="50" cy="18" r="4.5"/>
+    <circle cx="82" cy="50" r="4.5"/>
+    <circle cx="50" cy="82" r="4.5"/>
+    <circle cx="18" cy="50" r="4.5"/>
+  </g>
+
+  <!-- Inner accent ring on center node -->
+  <circle cx="50" cy="50" r="3" fill="#a855f7" opacity="0.4"/>
+</svg>

@@ -1,0 +1,14 @@
+# robots.txt — Matheus Fabio Antelo landing page
+# https://fabioantelomath.github.io/landingPage/
+
+User-agent: *
+Allow: /
+
+# Crawl-delay is optional and respected by some bots
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://fabioantelomath.github.io/landingPage/sitemap.xml
+
+# Block noisy / utility endpoints (none right now, placeholder pattern)
+# Disallow: /private/
