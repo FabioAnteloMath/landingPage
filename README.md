@@ -10,8 +10,11 @@ Built with vanilla HTML, CSS, and JavaScript. **No frameworks, no build step, no
 
 ```
 landing-page/
-├── index.html             # Semantic structure, all 7 sections, i18n markup
+├── index.html             # Semantic structure, all 7 sections, i18n markup, SEO meta
 ├── 404.html               # Custom not-found page (GH Pages picks it up automatically)
+├── sitemap.xml            # Search-engine sitemap with hreflang alternates
+├── robots.txt             # Crawler rules + sitemap pointer
+├── site.webmanifest       # PWA manifest (installable, theme color, icons)
 ├── styles.css             # Design system + responsive layout
 ├── script.js              # Interactivity (nav, scroll, counter, particles)
 ├── i18n.js                # Runtime: applies translations, persists choice
@@ -19,7 +22,15 @@ landing-page/
 ├── i18n.source.json       # Source strings in EN (editable)
 ├── i18n.overrides.json    # Manual post-edits to fix machine-translation errors
 ├── translate-build.js     # Calls MyMemory API → writes i18n.translations.js
-├── assets/avatar.jpg      # Profile photo
+├── assets/
+│   ├── avatar.jpg         # Profile photo
+│   ├── og-image.jpg       # Open Graph / Twitter card (1200×630, 89KB)
+│   ├── favicon.svg        # Modern vector favicon (circular avatar + gradient ring)
+│   ├── favicon-32x32.png  # Browser tab favicon
+│   ├── favicon-16x16.png  # Small browser tab / bookmark favicon
+│   ├── apple-touch-icon.png  # iOS home-screen icon (180×180)
+│   ├── android-chrome-192x192.png  # Android home-screen icon
+│   └── android-chrome-512x512.png  # Android splash-screen icon
 ├── .nojekyll              # Tells GitHub Pages to skip Jekyll — pure static deploy
 ├── .gitignore             # OS / editor noise
 └── README.md              # This file
@@ -188,6 +199,24 @@ Change any value and the whole page updates.
 - ✅ System fonts fallback if Google Fonts fail
 - ✅ No external runtime dependencies
 - ✅ Lighthouse-friendly: <100KB total (no images, all CSS+JS in source)
+
+### SEO & social
+
+- ✅ Custom **Open Graph image** (1200×630 JPG, 89KB) — generated from your avatar + name + role on a deep-purple gradient
+- ✅ **Twitter Card** (`summary_large_image`) with same image
+- ✅ **`og:locale` alternates** for `en_US` / `es_ES` / `pt_BR` (so LinkedIn/Twitter know the site is trilingual)
+- ✅ **Schema.org `Person` JSON-LD** with `jobTitle`, `knowsAbout`, `sameAs` (GitHub, LinkedIn), `email`
+- ✅ `<link rel="canonical">` pinned to the GitHub Pages URL
+- ✅ `sitemap.xml` with `hreflang` alternates per language
+- ✅ `robots.txt` pointing at the sitemap
+- ✅ **Custom favicon set**: SVG (modern) + PNG 16/32 + `apple-touch-icon` 180 + `android-chrome` 192/512 — all derived from your `avatar.jpg` with a subtle purple ring that matches the site theme
+- ✅ `site.webmanifest` so the site is installable as a PWA (theme color, dark background, maskable icons)
+- ✅ `<meta name="theme-color">` + `<meta name="color-scheme">` for browser chrome
+
+### Customizing the favicon / OG image
+
+- **Favicon** is derived from `assets/avatar.jpg` — drop a new `avatar.jpg` in `assets/` and rebuild the set with any tool of choice (Pillow / `convert` / online). Recommended sizes: SVG (modern), 16×16 PNG, 32×32 PNG, 180×180 apple-touch, 192×192 and 512×512 for Android.
+- **OG image** (`assets/og-image.jpg`, 1200×630, 89KB) was generated from the avatar using a generative image service and then resized with Pillow. Replace it with your own design any time — keep the file path and dimensions so the meta tags keep working.
 
 ---
 

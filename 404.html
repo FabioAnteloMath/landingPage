@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
-    <title>404 — Page not found · Matheus Fabio</title>
+    <meta name="robots" content="noindex">
+    <title>404 — Lost in the network · Matheus Fabio</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track.">
+
+    <link rel="canonical" href="https://fabioantelomath.github.io/landingPage/">
+    <meta property="og:title" content="404 — Lost in the network">
+    <meta property="og:description" content="The page you're looking for doesn't exist.">
+    <meta property="og:url" content="https://fabioantelomath.github.io/landingPage/404">
+    <meta property="og:image" content="https://fabioantelomath.github.io/landingPage/assets/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
     <style>
         .notfound {
             min-height: 100vh;
@@ -17,34 +33,75 @@
             justify-content: center;
             text-align: center;
             padding: var(--space-3xl) var(--container-padding);
+            position: relative;
+            overflow: hidden;
         }
-        .notfound-inner { max-width: 520px; }
+        .notfound-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 40%, var(--glow) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 30% at 30% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+        }
+        .notfound-inner { max-width: 560px; position: relative; }
         .notfound-code {
             font-family: var(--font-mono);
-            font-size: clamp(5rem, 14vw, 9rem);
+            font-size: clamp(6rem, 18vw, 12rem);
             font-weight: 700;
-            line-height: 1;
-            letter-spacing: -0.04em;
+            line-height: 0.95;
+            letter-spacing: -0.05em;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: var(--space-md);
+            position: relative;
+            display: inline-block;
         }
-        .notfound-title { font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-sm); }
-        .notfound-desc { color: var(--text-secondary); margin-bottom: var(--space-xl); }
+        .notfound-code::after {
+            content: '';
+            position: absolute;
+            inset: -8% -4%;
+            background: var(--accent-gradient);
+            filter: blur(40px);
+            opacity: 0.25;
+            z-index: -1;
+        }
+        .notfound-title { font-size: 1.75rem; font-weight: 600; margin-bottom: var(--space-sm); }
+        .notfound-desc { color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 1.05rem; }
+        .notfound-quote {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            display: inline-block;
+        }
+        .notfound-quote::before { content: '> '; color: var(--accent-secondary); }
+        .notfound-actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
     </style>
 </head>
 <body>
     <main class="notfound">
+        <div class="notfound-bg" aria-hidden="true"></div>
         <div class="notfound-inner">
             <div class="notfound-code" aria-hidden="true">404</div>
             <h1 class="notfound-title">Page not found</h1>
-            <p class="notfound-desc">The page you're looking for doesn't exist or was moved. Let's get you back on track.</p>
-            <a href="./" class="btn btn-primary">
-                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:scaleX(-1)"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                Back to home
-            </a>
+            <p class="notfound-desc">
+                The page you're looking for doesn't exist or was moved. It might have been retrained, deprecated, or never deployed.
+            </p>
+            <p class="notfound-quote" aria-label="Error message">error: route_not_found — the agent searched the knowledge base and returned zero hits</p>
+            <div class="notfound-actions">
+                <a href="./" class="btn btn-primary">
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:scaleX(-1)"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    Back to home
+                </a>
+                <a href="#projects" class="btn btn-secondary">View projects</a>
+            </div>
         </div>
     </main>
 </body>
