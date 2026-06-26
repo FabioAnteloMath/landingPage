@@ -1084,6 +1084,16 @@ ol {
     gap: var(--space-lg);
 }
 
+.project-card-featured {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .project-card-featured {
+        grid-column: auto;
+    }
+}
+
 .project-card {
     position: relative;
     padding: var(--space-xl);
