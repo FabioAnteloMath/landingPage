@@ -54,7 +54,7 @@ window.I18N_TRANSLATIONS = {
     "about.skillsAria": "Skills",
 
     "projects.eyebrow": "/ Featured Work",
-    "projects.title": "Engineering portfolio.",
+    "projects.title": "Projects",
     "projects.technologies": "Technologies used",
     "projects.repo": "Repo",
     "projects.repoAria": "GitHub repository",
@@ -158,7 +158,7 @@ window.I18N_TRANSLATIONS = {
     "about.skillsAria": "Habilidades",
 
     "projects.eyebrow": "/ Trabajo destacado",
-    "projects.title": "Portafolio de ingeniería.",
+    "projects.title": "Proyectos",
     "projects.technologies": "Tecnologías utilizadas",
     "projects.repo": "Repo",
     "projects.repoAria": "Repositorio en GitHub",
@@ -262,7 +262,7 @@ window.I18N_TRANSLATIONS = {
     "about.skillsAria": "Habilidades",
 
     "projects.eyebrow": "/ Trabalhos em destaque",
-    "projects.title": "Portfólio de engenharia.",
+    "projects.title": "Projetos",
     "projects.technologies": "Tecnologias utilizadas",
     "projects.repo": "Repo",
     "projects.repoAria": "Repositório no GitHub",
