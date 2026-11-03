@@ -17,7 +17,7 @@ export function BenchTerminal() {
       <TypingAnimation duration={25} className="text-[11px] sm:text-xs">
         $ python -m edge_llm_bench.report --latest
       </TypingAnimation>
-      <AnimatedSpan className="text-[11px] sm:text-xs text-brand">→ docs/report.html · 5 interactive charts</AnimatedSpan>
+      <AnimatedSpan className="text-[11px] sm:text-xs text-accent">→ docs/report.html · 5 interactive charts</AnimatedSpan>
     </Terminal>
   );
 }

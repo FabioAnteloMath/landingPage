@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -7,118 +6,40 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-brand: var(--brand);
-  --color-brand-2: var(--brand-2);
 
-  /* Magic UI keyframes */
   --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  --animate-shiny-text: shiny-text 8s infinite;
-  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(calc(-100% - var(--gap))); }
   }
-  @keyframes marquee-vertical {
-    from { transform: translateY(0); }
-    to { transform: translateY(calc(-100% - var(--gap))); }
-  }
-  @keyframes shiny-text {
-    0%, 90%, 100% { background-position: calc(-100% - var(--shiny-width)) 0; }
-    30%, 60% { background-position: calc(100% + var(--shiny-width)) 0; }
-  }
-  @keyframes shimmer-slide {
-    to { transform: translate(calc(100cqw - 100%), 0); }
-  }
-  @keyframes spin-around {
-    0% { transform: translateZ(0) rotate(0); }
-    15%, 35% { transform: translateZ(0) rotate(90deg); }
-    65%, 85% { transform: translateZ(0) rotate(270deg); }
-    100% { transform: translateZ(0) rotate(360deg); }
-  }
-  @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--radix-accordion-content-height); }
-  }
-  @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height); }
-    to { height: 0; }
-  }
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.995 0.002 286);
-  --foreground: oklch(0.16 0.02 286);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0.02 286);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0.02 286);
-  --primary: oklch(0.21 0.02 286);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.004 286);
-  --secondary-foreground: oklch(0.21 0.02 286);
-  --muted: oklch(0.967 0.004 286);
-  --muted-foreground: oklch(0.5 0.02 286);
-  --accent: oklch(0.955 0.012 286);
-  --accent-foreground: oklch(0.21 0.02 286);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.915 0.008 286);
-  --input: oklch(0.915 0.008 286);
-  --ring: oklch(0.6 0.2 277);
-  /* Brand: indigo → violet, carried over from the previous site */
-  --brand: oklch(0.55 0.22 277);
-  --brand-2: oklch(0.56 0.25 302);
+  --background: #f3f0e8;
+  --foreground: #141413;
+  --muted: #65635c;
+  --border: #d9d5c9;
+  --card: #fbf9f3;
+  --accent: #ea4a14;
+  --accent-foreground: #141413;
 }
 
 .dark {
-  --background: oklch(0.13 0.012 286);
-  --foreground: oklch(0.975 0.004 286);
-  --card: oklch(0.17 0.014 286);
-  --card-foreground: oklch(0.975 0.004 286);
-  --popover: oklch(0.17 0.014 286);
-  --popover-foreground: oklch(0.975 0.004 286);
-  --primary: oklch(0.94 0.01 286);
-  --primary-foreground: oklch(0.18 0.02 286);
-  --secondary: oklch(0.23 0.016 286);
-  --secondary-foreground: oklch(0.975 0.004 286);
-  --muted: oklch(0.23 0.016 286);
-  --muted-foreground: oklch(0.71 0.02 286);
-  --accent: oklch(0.25 0.03 286);
-  --accent-foreground: oklch(0.975 0.004 286);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.2 277);
-  --brand: oklch(0.68 0.19 277);
-  --brand-2: oklch(0.7 0.2 302);
+  --background: #0d0d0c;
+  --foreground: #f2efe8;
+  --muted: #9b988f;
+  --border: #2b2a27;
+  --card: #141412;
+  --accent: #ff5a1f;
+  --accent-foreground: #0d0d0c;
 }
 
 @layer base {
@@ -128,30 +49,34 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 5rem;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "ss01", "cv11";
   }
 
   ::selection {
-    background: color-mix(in oklch, var(--brand) 35%, transparent);
+    background: var(--accent);
+    color: var(--accent-foreground);
   }
 
   :focus-visible {
-    outline: 2px solid var(--ring);
-    outline-offset: 2px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    background-image: linear-gradient(100deg, var(--brand), var(--brand-2));
-    -webkit-background-clip: text;
-    background-clip: text;
+  /* Hairline column guides behind the page, like a layout grid. */
+  .bg-guides {
+    background-image: linear-gradient(to right, color-mix(in srgb, var(--foreground) 6%, transparent) 1px, transparent 1px);
+    background-size: calc(100% / 4) 100%;
+  }
+
+  .text-outline {
     color: transparent;
+    -webkit-text-stroke: 1px color-mix(in srgb, var(--foreground) 45%, transparent);
   }
 }
 

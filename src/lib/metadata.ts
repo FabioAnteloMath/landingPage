@@ -3,10 +3,10 @@ import { LOCALES, LOCALE_META, SITE, getDictionary, type Locale } from "@/data/c
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fcfcfd" },
-    { media: "(prefers-color-scheme: dark)", color: "#0d0c14" },
+    { media: "(prefers-color-scheme: light)", color: "#fbfbfa" },
+    { media: "(prefers-color-scheme: dark)", color: "#111110" },
   ],
-  colorScheme: "dark light",
+  colorScheme: "light dark",
 };
 
 export function buildMetadata(locale: Locale): Metadata {
